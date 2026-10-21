@@ -4,21 +4,104 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Grandpa Whitmer's Old Fashioned Peanut Butter Mixer</title>\
+        <title>Grandpa Whitmer's Old Fashioned Peanut Butter Mixer</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <div class="site-root" id="top">
             <header>
-                <a class="logo" href="#top">Grandpa Whitmer's Old Fashioned Peanut Better</a>
+                <a class="logo" href="#top">Grandpa Whitmer's Old Fashioned Peanut Butter</a>
                 <nav aria-label="Main navigation">
-                    <a href="#products">Our Peanut Butter</a>
+                    <a href="#products">Our Mixers</a>
+                    <a href="#faq">How It Works</a>
                     <a href="#story">Our Story</a>
-                    <a href="#faq">FAQs</a>
                 </nav>
             </header>
-        </div>
-    </body>
+            <main>
+                <section class="hero">
+                    <div class="hero-copy">
+                        <div class="eyebrow">Simply stir and enjoy!</div>
+                        <h1>Stir it smooth.<br>Skip the mess.</h1>
+                        <p>
+                            Natural peanut butter separates in the jar. Grandpa Whitmer makes hand mixers designed to blend the oil back into the peanut butter so it's easier to stir and ready to spread.
+                        </p>
+                        <div class="actions">
+                            <a class="btn" href="#products">Explore Mixers<span aria-hidden="true">&nbsp;</span></a>
+                            <a class="btn secondary" href="#faq">How It Works</a>
+                        </div>
+                    </div>
+                    <div class="hero-img" role="img" aria-label="A mixer">
+                        <img src="images/pbmixer.png" alt="pb-image">
+                        <div class="hero-note">A better way to stir.</div>
+                    </div>  
+                </section>
 
+                <section class="trust-strip" aria-label="Product highlights">
+                    <div class="trust-item"><b>*</b> Easy to use</div>
+                    <div class="trust-item"><b>*</b> No oil splashes</div>
+                    <div class="trust-item"><b>*</b> Easy to clean</div>
+                    <div class="trust-item"><b>*</b> Made with quality in the USA</div>
+                </section>
+
+                <section class="section" id="faq">
+                    <div class="faq">
+                        <div class="eyebrow">A few questions to mix it up</div>
+                        <details>
+                            <summary>What does a peanut butter mixer do?</summary>
+                            <p>
+                                It stirs separated natural peanut butter to mix the oil back through the thick peanut butter.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>How do I choose the right model?</summary>
+                            <p>
+                                Check your jar size and shape against our Jar Sizer. Compatibility can vary by brand.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Can I get replacement parts?</summary>
+                            <p>
+                                Yes! Look for the parts listed for your specific mixer model and purchase them here.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <section class="ready" id="ready">
+                    <div class="eyebrow">Ready to find your mixer?</div>
+                    <h2>Choose the right fit for your jar.</h2>
+                        <a class="btn" href="#products">Shop Now</a>
+                </section>
+            </main>
+
+            <footer>
+                <div class="footer-inner">
+                    <div class="footer-brand">Grandpa Whitmer's</div>
+                    <div>Mixers for natural peanut butter.</div>
+                    <a href="#top">Back to top ↑</a>
+                    <div>© <span id="year"></span> Grandpa Whitmer's</div>
+                </div>
+            </footer>
+            <div class="cart-note" id="note" role="status" aria-live="polite"></div>
+        </div>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            let noteTimer;
+
+            function showNote(item) {
+                const note = document.getElementById("note");
+
+                note.textContent = item;
+                note.style.display = "block";
+
+                clearTimeout(noteTimer);
+
+                noteTimer = setTimeout(() => {
+                    note.style.display = "none";
+                }, 3600);
+            }
+        </script>
+    </body>
 </html>
